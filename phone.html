@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>手机号抽奖</title>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+		<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
+	</head>
+	<body style="text-align: center;">
+		<h2>抽奖列表</h2>
+		<div id="div_p" style="text-align: left;">
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+		<button type="button" id="btn_prize">开始抽奖</button>
+		<button type="button" id="btn_re">重置抽奖</button>
+	</body>
+	
+	<script>
+	    function create_animation(i, temp) {
+			$("#div_p p:eq(" + i +")").prepend(temp)			$("#div_p p:eq(" + i +")").animate({				left:'47.3%',			})
+		}
+		$(function(){
+			var number = ["139","138","137","136","135","134","159","158","157","150","151","152","188","187","182","183","184","178","130","131","132","156","155","186","185","176","133","153","189","180","181","177"]
+			for(var i = 0;i<10;i++){				temp = number[Math.floor(Math.random()*number.length)]				for(var j = 0;j<8;j++){						temp = temp + Math.floor(Math.random()*10)				}
+				setTimeout(create_animation(i, temp), 0)			}
+		})
+		$(document).on("click","#btn_prize",function(){			temp = Math.floor(Math.random()*10)			for(var i = 0;i<=10;i++){				if(i!=temp){					$("#div_p p:eq(" + i +")").toggle("fade")				} else{					$("#div_p p:eq(" + i +")").animate({						fontSize:"2em", left:"44.6%",						backgroundColor:"#aa0000",	color:"fff",						width:210,}).css("color","red")
+				}
+			}
+			$("#btn_prize").attr("disabled","true")
+		})
+		
+		$(document).on("click","#btn_re",function(){			$('body').toggle("puff")			setTimeout(function(){				window.location.reload()				},1000)		})
+	</script>
+</html>
