@@ -3,53 +3,19 @@
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
+		<style type="text/css">
+		</style>
 		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
 	</head>
 	<body>
-		<div>div1</div>
-		<div class="classtest">div2</div>
-		<div class="classtest">div3</div>
-		<div name="nametest1">div4</div>
-		<div name="nametest2">div5</div>
-		<div name="aaanamebbb">div6</div>
-		<div name="divname">
-			<span>span1</span>
+		<div id="new">
+			<h3 class="top" name="header1">123</h3>
 		</div>
-		<div name="divname">
-			<div>
-				<span>span2</span>
-			</div>
-		</div>
-		<ul>
-			<li>1</li>
-			<li>2</li>
-			<li>3</li>
-		</ul>
-		<h3 id="idtest" class="classtest">h3</h3>
-		<button onclick="helloJQuery()">click me</button>
 	</body>
-	
 	<script>
-		function helloJQuery() {
-			alert($("h3").attr("class"))
-			// 语法：$(selector).action()
-			// $("#idtest").text("hello jquery")
-			// $("div").text("hello jquery")
-			// $(".classtest").text("hello jquery")
-			// $("[name*=name]").text("hello jquery")
-			// $("div:last").text("hello jquery")
-			// $("div span").text("hello jquery")
-			// $("[name=divname]>span").text("hello jquery")
-			// $("[name=divname]").each(function(index){
-			// 	this.title="i am " + (index + 1)
-			// })
-			// $("ul li").each(function(index){
-			// 	this.title="i am " + (index + 1)
-			// })
-			// alert($("div").find("span").text())
-			 // $("div").not(".classtest").text("hello jquery")
-			  // $("[name=divname]").add("h3").text("hello jquery")
-			  // $("body div:first-child").css("border", "2px solid red")
-		}
+	    $(function(){
+			// alert($("[name='header1']").text())
+			alert($(div h3).text())
+		})
 	</script>
 </html>
